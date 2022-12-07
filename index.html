@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      scroll-snap-type: y mandatory;
+      height: 100vh;
+      width: 100vw;
+      overflow-x: scroll;
+    }
+
+    section {
+      scroll-snap-align: start;
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <section style="background-color: red">
+    slide 1
+  </section>
+  <section style="background-color: green">
+    slide 2
+  </section>
+  <section style="background-color: green">
+    slide 3
+  </section>
+  </div>
+  <script>
+  </script>
+</body>
+</html>

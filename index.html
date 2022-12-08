@@ -4,13 +4,26 @@
   <meta charset="utf-8">
   <title></title>
   <style>
+    @font-face {
+      font-family: 'ASM-Bold';
+      src: url('fonts/31A5DC_1_0.eot') format('opentype'),
+           url('fonts/31A5DC_1_0.woff') format('woff'),
+           url('fonts/31A5DC_1_0.ttf') format('truetype');
+    }
+
     * {
       box-sizing: border-box;
+      margin: 0;
     }
+
     body {
       margin: 0;
       padding: 0;
+      font-size: 5vh;
+      line-height: 6vh;
+      font-family: "ASM-Bold", sans-serif;
     }
+
     .container {
       scroll-snap-type: y mandatory;
       height: 100vh;
@@ -22,20 +35,239 @@
       scroll-snap-align: start;
       height: 100vh;
       width: 100vw;
+      padding: 1vh;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    section.blue {
+      color: #fff;
+      background-color: #3333ff;
+    }
+
+    section.cover {
+     flex-flow: row;
+    }
+
+    section.cover > * {
+      width: 35vw;
+    }
+
+    section.cover > * + * {
+      margin-left: 10vw;
+    }
+
+    section.cover > div {
+      display: flex;
+      flex-flow: column;
+    }
+
+    section.cover blockquote {
+      background-color: #f0f0ea;
+      font-size: 2vh;
+      line-height: 2.2vh;
+      text-align: left;
+      padding: 1vh 2vh;
+      color: #636363;
+    }
+
+
+    img {
+      display: block;
+    }
+
+    h1 {
+      font-size: 9vh;
+      line-height: 10vh;
+    }
+
+    h2 {
+      font-size: 7vh;
+      line-height: 8vh;
+    }
+
+    * + * {
+      margin-top: 4vh;
+    }
+
+    ul {
+      list-style-type: none;
+
     }
   </style>
 </head>
 <body>
   <div class="container">
-  <section style="background-color: red">
-    slide 1
-  </section>
-  <section style="background-color: green">
-    slide 2
-  </section>
-  <section style="background-color: green">
-    slide 3
-  </section>
+    <section>
+      <h2>Trabe</h2>
+      <img src="assets/trabe-logo.png" alt="Trabe logo" style="height: 20vh"/>
+      <h2>Asís & David</h2>
+    </section>
+
+    <section>
+      <ul>
+        <li>We develop front and back with JS (15+ years)</li>
+
+        <li>In the beginning there was the browser... hell</li>
+
+        <li>Solution: vast ecosystem of libraries and tools</li>
+
+        <li>We are old 👨🏻‍🦳👴🏻</li>
+      </ul>
+    </section>
+
+    <!--
+      * Browser shit.
+      * Imcompatible APIs. Divergent implementations. Uneven support
+      * A whole ecosystem to solve this
+      * That's the past
+      * We're old fellas. Used to that shit and accept solutions that may no longer make sense
+    -->
+
+    <section>
+      <h2>
+        Let go of the past!
+      </h2>
+      <img src="assets/kylo.jpg" alt="Kylo Ren ranting" style="height: 60vh">
+    </section>
+
+    <section class="blue">
+      <h1>Vanilla all the things</h1>
+    </section>
+
+    <section>
+      <h2>Disclaimers</h2>
+      <ul>
+        <li>
+          JS focus. Also valid with other languages/technologies
+        </li>
+        <li>
+          Vanilla slides (just HTML+CSS)
+        </li>
+      </ul>
+    </section>
+
+    <section class="cover">
+      <h2>Vanilla frontend</h2>
+      <div>
+        <img src="assets/vanilla-4.jpg" alt="Some vanilla" />
+        <blockquote>
+         frontend developer eating vanilla
+        </blockquote>
+      </div>
+    </section>
+
+    <section>
+      <h2>Vanilla forms</h2>
+
+      <ul>
+        <li>Custom calendars =>  <input type=date /></li>
+        <li>Time input -> Text field (https://adamsilver.io/blog/designing-a-time-input/)</li>
+        <li>Form/Validation libs -> FormData + string values. Browser validation</li>
+
+        <li>Formik (44kB) + Yup (60kB)</li>
+
+        https://bundlephobia.com
+      </ul>
+    </section>
+<!--
+<section>
+
+Custom modals and dialogs => Browser <dialog>
+
+Not just size. Modality and controlling the focus.
+
+react-modal (25kB), react-focus-lock (15kB)
+
+Don't fight the browser
+
+--
+</section>
+<section>
+
+* SASS, postCSS, CSS in JS, etc. -> Plain CSS with custom properties, calcs and advanced selectors.
+  * `has`, `where`, `is`
+  * Metodolotions! (https://getbem.com/introduction/ https://www.keithcirkel.co.uk/css-classes-considered-harmful/)
+
+* Scoping, CSS-in-JS vs CSS modules. Cannot fight the global CSS scope. The runtime problem (style injection, SSR, etc.)
+
+Emotion (15kB)
+
+--
+</section>
+<section>
+
+Luxon, Moment => Temporal + Intl
+
+Luxon (72kB although can be pruned)
+
+--
+</section>
+<section>
+
+Summarizing
+
+* The bundling/npm hell (size, security, updates)
+* Runaway from deps
+* Always audit
+* Beware of the coziness `npm install`
+
+</section>
+<section>
+
+
+Alternatives
+
+* Vanilla HTML, CSS and JS
+* Do not use npm: CDNs + import maps
+
+</section>
+
+-->
+
+    <section class="cover">
+      <h2>Vanilla React</h2>
+      <div>
+        <img src="assets/vanilla-y.jpg" alt="Some vanilla" />
+        <blockquote>
+          Lorem ipsum
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="cover">
+      <h2>Vanilla full stack</h2>
+      <div>
+        <img src="assets/vanilla-3.jpg" alt="Some vanilla" />
+        <blockquote>
+          full stack developer eating vanilla in the wild
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="cover">
+      <h2>Vanilla backend</h2>
+      <div>
+        <img src="assets/vanilla-2.jpg" alt="Some vanilla" />
+        <blockquote>
+          backend developer eating vanilla in a cave
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="cover">
+      <h2>Vanilla tooling</h2>
+      <div>
+        <img src="assets/vanilla-x.jpg" alt="Some vanilla" />
+        <blockquote>
+          Lorem ipsum
+        </blockquote>
+      </div>
+    </section>
+
   </div>
   <script>
   </script>

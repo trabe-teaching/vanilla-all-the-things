@@ -48,7 +48,7 @@
       scroll-snap-type: y mandatory;
       height: 100vh;
       width: 100vw;
-      overflow-x: scroll;
+      overflow-x: hidden;
     }
 
     section {
@@ -354,5 +354,26 @@
 
 
   </div>
+  <script>
+    const observeSectionIntersection = section => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navigation.navigate(`#${section.id}`);
+          }
+        })
+      }, {
+        root: document.querySelector(".container"),
+      });
+
+      observer.observe(section);
+    }
+
+    document.querySelectorAll("section").forEach((section, index) => {
+      section.id = `slide-${index}`;
+
+      observeSectionIntersection(section);
+    });
+  </script>
 </body>
 </html>

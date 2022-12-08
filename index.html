@@ -5,10 +5,10 @@
   <title></title>
   <style>
     @font-face {
-      font-family: 'ASM-Bold';
-      src: url('fonts/31A5DC_1_0.eot') format('opentype'),
-           url('fonts/31A5DC_1_0.woff') format('woff'),
-           url('fonts/31A5DC_1_0.ttf') format('truetype');
+      font-family: 'ASM-Regular';
+      src: url('fonts/31A5DC_3_0.eot') format('opentype'),
+           url('fonts/31A5DC_3_0.woff') format('woff'),
+           url('fonts/31A5DC_3_0.ttf') format('truetype');
     }
 
     * {
@@ -21,7 +21,27 @@
       padding: 0;
       font-size: 5vh;
       line-height: 6vh;
-      font-family: "ASM-Bold", sans-serif;
+      font-family: "ASM-Regular", sans-serif;
+    }
+
+    a {
+      color: #3333ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #ff33cc;
+    }
+
+    code {
+      font-family: monospace;
+      background-color: #f0f0f0;
+      padding: 0.5vh;
+      font-size: 80%;
+    }
+
+    small {
+      font-size: 60%;
     }
 
     .container {
@@ -35,7 +55,7 @@
       scroll-snap-align: start;
       height: 100vh;
       width: 100vw;
-      padding: 1vh;
+      padding: 5vh 5vw;
       display: flex;
       flex-flow: column;
       justify-content: center;
@@ -46,6 +66,19 @@
     section.blue {
       color: #fff;
       background-color: #3333ff;
+    }
+
+    section.blue a {
+      color: #fff;
+    }
+
+    section.blue a:hover {
+      color: #ff33cc;
+    }
+
+    section.black {
+      color: #fff;
+      background-color: #000;
     }
 
     section.cover {
@@ -164,69 +197,97 @@
       <h2>Vanilla forms</h2>
 
       <ul>
-        <li>Custom calendars =>  <input type=date /></li>
-        <li>Time input -> Text field (https://adamsilver.io/blog/designing-a-time-input/)</li>
-        <li>Form/Validation libs -> FormData + string values. Browser validation</li>
-
-        <li>Formik (44kB) + Yup (60kB)</li>
-
-        https://bundlephobia.com
+        <li>Custom calendars ⮕ <code>&lt;input type="date" /&gt;</code></li>
+        <li>
+          Time input ⮕ <code>&lt;input type="text" &gt;</code>
+          <br/>
+          <small><a href="https://adamsilver.io/blog/designing-a-time-input/">Designing a time input</a></small>
+        </li>
+        <li>
+          Form libs ⮕ FormData + string values
+        </li> 
+        <li>
+          Validation libs ⮕ Browser validation
+          <br/>
+          <small>Formik (44kB) + Yup (60kB)</small>
+          <br/>
+          <small><a href="https://bundlephobia.com">bundlephobia</a></small>
+        </li>
       </ul>
     </section>
-<!--
-<section>
 
-Custom modals and dialogs => Browser <dialog>
+    <section>
+      <ul>
+        <li>Custom modals and dialogs ⮕ Browser <code>&ltdialog&gt</code>
+          <li>
+            Not just size. Modality and controlling the focus.
+            <br/>
+            <small>react-modal (25kB), react-focus-lock (15kB)</small>
+          </li>
+          <li>Don't fight the browser</li>
+      </ul>
+    </section>
 
-Not just size. Modality and controlling the focus.
+    <section>
+      <ul>
+        <li>
+          SASS, postCSS, CSS in JS ⮕ Plain CSS with custom properties, calcs and advanced selectors.
+          <br/>
+          <small><code>has</code>, <code>where</code>, <code>is</code></small>
+        </li>
+        <li>
+          Metodolotions!
+          <br/>
+          <small>
+            <a href="https://getbem.com/introduction">BEM</a>
+            vs.
+            <a href="https://www.keithcirkel.co.uk/css-classes-considered-harmful/">CSS classes considered harmful</a>
+          </small>
+        </li>
+        <li>
+          Scoping, CSS-in-JS, CSS modules. Cannot fight the global CSS scope. Runtime problems (style injection, SSR, etc.)
+          <br />
+          <small>Emotion (15kB)</small>
+        </li>
 
-react-modal (25kB), react-focus-lock (15kB)
+      </ul>
+    </section>
 
-Don't fight the browser
+    <section>
+      <ul>
+        <li>
+          Luxon, Moment ⮕ Temporal + Intl
+          <br/>
+          <small>Luxon (72kB although can be pruned)</small>
+        </li>
+      </ul>
+    </section>
 
---
-</section>
-<section>
+    <section>
+      <h2>Summarizing</h2>
+      <ul>
+        <li>
+          The bundling/npm hell (size, security, updates)
+        </li>
+        <li>
+          Run away from deps
+        </li>
+        <li>
+          Always audit
+        </li>
+        <li>
+          Beware of the coziness of <code>npm install</code>
+        </li>
+      </ul>
+    </section>
 
-* SASS, postCSS, CSS in JS, etc. -> Plain CSS with custom properties, calcs and advanced selectors.
-  * `has`, `where`, `is`
-  * Metodolotions! (https://getbem.com/introduction/ https://www.keithcirkel.co.uk/css-classes-considered-harmful/)
-
-* Scoping, CSS-in-JS vs CSS modules. Cannot fight the global CSS scope. The runtime problem (style injection, SSR, etc.)
-
-Emotion (15kB)
-
---
-</section>
-<section>
-
-Luxon, Moment => Temporal + Intl
-
-Luxon (72kB although can be pruned)
-
---
-</section>
-<section>
-
-Summarizing
-
-* The bundling/npm hell (size, security, updates)
-* Runaway from deps
-* Always audit
-* Beware of the coziness `npm install`
-
-</section>
-<section>
-
-
-Alternatives
-
-* Vanilla HTML, CSS and JS
-* Do not use npm: CDNs + import maps
-
-</section>
-
--->
+    <section>
+      <h2>Alternatives</h2>
+      <ul>
+        <li>Vanilla HTML, CSS and JS</li>
+        <li>Do not use npm: CDNs + import maps</li>
+      </ul>
+    </section>
 
     <section class="cover">
       <h2>Vanilla React</h2>
@@ -268,8 +329,30 @@ Alternatives
       </div>
     </section>
 
+    <section class="cover">
+      <h2>Summing up tooling</h2>
+      <div>
+        <img src="assets/vanilla-z.jpg" alt="Some vanilla" />
+        <blockquote>
+          Lorem ipsum
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="blue">
+      <h1>Vanilla all the things!</h1>
+    </section>
+
+    <section class="black">
+      <h1>Questions?</h1>
+    </section>
+
+    <section class="blue">
+      <h1>We are always hiring</h1>
+      <h2><a href="mailto:rrhh@trabe.io">rrhh@trabe.io</a></h2>
+    </section>
+
+
   </div>
-  <script>
-  </script>
 </body>
 </html>

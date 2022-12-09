@@ -299,6 +299,15 @@
       </div>
     </section>
 
+    <section>
+      <ul>
+        <li><code>useEffect</code> deps ⮕ no deps</li>
+        <li><code>useCallback</code>, <code>useMemo</code> ⮕ nay</li>
+        <li>Redux, Jotai, etc. ⮕ <code>useState</code>, <code>useReducer</code></li>
+        <li>Anti-vanilla :) Use React events, avoid DOM events</li>
+      </ul>
+    </section>
+
     <section class="cover">
       <h2>Vanilla full stack</h2>
       <div>
@@ -309,6 +318,28 @@
       </div>
     </section>
 
+    <section>
+      <h2>Know your APIs</h2>
+      <ul>
+        <li>lodash ⮕ <code>Array.map</code>, <code>Array.forEach</code>, <code>Array.filter</code></li>
+        <li>Master some FP basics!</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Vanilla-inception<br/><small>(vanilla inside vanilla)</small></h2>
+      <ul>
+        <li>
+          SSE instead of Websockets
+          <br/>
+          <small>Zero setup, simpler API, HTTP transport</small>
+        </li>
+        <li>
+          Server push only: keep it simple
+        </li>
+      </ul>
+    </section>
+
     <section class="cover">
       <h2>Vanilla backend</h2>
       <div>
@@ -317,6 +348,16 @@
           backend developer eating vanilla in a cave
         </blockquote>
       </div>
+    </section>
+
+    <section>
+      <h2>Know your APIs 2</h2>
+      <ul>
+        <li>yargs vs util.parseArgs</li>
+        <li>chalk vs inspect.colors</li>
+        <li>winston vs util.debug</li>
+        <li>fs-extra vs fs (no extras!)</li>
+      </ul>
     </section>
 
     <section class="cover">
@@ -359,11 +400,12 @@
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            navigation.navigate(`#${section.id}`);
+            location.assign(`#${section.id}`);
           }
         })
       }, {
         root: document.querySelector(".container"),
+        threshold: 0.5,
       });
 
       observer.observe(section);

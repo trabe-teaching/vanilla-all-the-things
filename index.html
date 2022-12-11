@@ -135,7 +135,7 @@
 <body>
   <div class="container">
     <section style="position: relative">
-      <h2>Trabe</h2>
+      <h1>Trabe</h1>
       <img src="assets/trabe-logo.png" alt="Trabe logo" style="height: 20vh"/>
       <h2>Asís & David</h2>
 
@@ -357,16 +357,17 @@
     <section>
       <h2>Know your APIs 2</h2>
       <ul>
-        <li>yargs vs util.parseArgs</li>
-        <li>chalk vs inspect.colors</li>
-        <li>winston vs util.debug</li>
-        <li>fs-extra vs fs (no extras!)</li>
+        <li>yargs ⮕ <a href="https://nodejs.org/api/util.html#utilparseargsconfig">util.parseArgs</a></li>
+        <li>chalk ⮕ <a href="https://nodejs.org/api/util.html#utilinspectobject-options">inspect.colors</a></li>
+        <li>pino ⮕ <a href="https://nodejs.org/api/util.html#utildebugsection">util.debug</a></li>
+        <li>fs-extra ⮕ <a href="https://nodejs.org/api/fs.html">fs</a> (no extras!)</li>
       </ul>
     </section>
+    <!-- Most libs are about ergonomics -->
 
     <section>
       <ul>
-        <li>axios, bluebird ⮕ fetch</li>
+        <li>axios, bluebird ⮕ <a href="https://blog.logrocket.com/fetch-api-node-js/">fetch</a></li>
         <li>Less features but simpler and portable</li>
         <li>Features arrive (E.g. <code>AbortController</code>). Better later than never!</li>
       </ul>
@@ -374,7 +375,7 @@
 
     <section>
       <ul>
-        <li>Beware DSL to generate standards</li>
+        <li>Beware of DSLs to generate standards</li>
         <li>E.g. <code>joi-to-json-schema</code>: simpler/compact API but not developer-portable</li>
       </ul>
     </section>
@@ -403,22 +404,21 @@
 
     <section>
       <ul>
+        <li>Reduce. Simplify. Do not mix</li>
         <li>
           Webpack + Jest + ESLint + Pretier ⮕  <br/>
           Vite-Vitest + ESLint + Prettier ⮕ <br/>
           Vite-Vitest + Rome ⮕ <br/>
-          Rome
+          Rome?
         </li>
-        <li>Reduce. Simplify. Do not mix</li>
       </ul>
     </section>
 
     <section>
       <ul>
-        <li>For simple features use standard libs</li>
+        <li>For simple features use standard solutions</li>
         <li>Jest ⮕ <a href="https://nodejs.org/api/test.html">node test runner</a></li>
         <li>Nodemon ⮕ <a href="https://nodejs.org/dist/latest-v18.x/docs/api/cli.html#--watch">node --watch</a></li>
-        <li>Yargs ⮕ <a href="https://nodejs.org/api/util.html#utilparseargsconfig">util.parseArgs</a></li>
         <li>Husky ⮕ <code>hooksPath</code></li>
         <li>Lerna, Nx, Turbo ⮕ <code>npm monorepo</code></li>
       </ul>
@@ -477,7 +477,7 @@
     <section>
       <ul>
         <li>
-          Not vanilla if dealing with older browsers or node versions or when the UI requires it
+          No vanilla if dealing with older browsers or node versions, or when the UI requires it
         </li>
         <li>
           Evergreen browsers, modern node (or Deno): go vanilla!

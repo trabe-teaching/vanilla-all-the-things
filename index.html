@@ -178,7 +178,7 @@
           JS focus. Also valid with other languages/technologies
         </li>
         <li>
-          Vanilla slides (just HTML+CSS)
+          Vanilla slides: HTML + CSS + JS (Just a bit)
         </li>
       </ul>
     </section>
@@ -220,7 +220,7 @@
       <ul>
         <li>Custom modals and dialogs ⮕ Browser <code>&ltdialog&gt</code>
           <li>
-            Not just size. Modality and controlling the focus.
+            Not just weight. Modality and controlling the focus.
             <br/>
             <small>react-modal (25kB), react-focus-lock (15kB)</small>
           </li>
@@ -360,6 +360,21 @@
       </ul>
     </section>
 
+    <section>
+      <ul>
+        <li>axios, bluebird ⮕ fetch</li>
+        <li>Less features but simpler and portable</li>
+        <li>Features arrive (E.g. <code>AbortController</code>). Better later than never!</li>
+      </ul>
+    </section>
+
+    <section>
+      <ul>
+        <li>Beware DSL to generate standards</li>
+        <li>E.g. <code>joi-to-json-schema</code>: simpler/compact API but not developer-portable</li>
+      </ul>
+    </section>
+
     <section class="cover">
       <h2>Vanilla tooling</h2>
       <div>
@@ -370,14 +385,137 @@
       </div>
     </section>
 
+
+    <section>
+      <ul>
+        <li>
+          yarn, pnpm ⮕ npm
+        </li>
+        <li>
+          npm is usually enough. It's also ubiquitous
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <ul>
+        <li>
+          Webpack + Jest + ESLint + Pretier ⮕  <br/>
+          Vite-Vitest + ESLint + Prettier ⮕ <br/>
+          Vite-Vitest + Rome ⮕ <br/>
+          Rome
+        </li>
+        <li>Reduce. Simplify. Do not mix</li>
+      </ul>
+    </section>
+
+    <section>
+      <ul>
+        <li>For simple features use standard libs</li>
+        <li>Jest ⮕ <a href="https://nodejs.org/api/test.html">node test runner</a></li>
+        <li>Nodemon ⮕ <a href="https://nodejs.org/dist/latest-v18.x/docs/api/cli.html#--watch">node --watch</a></li>
+        <li>Yargs ⮕ <a href="https://nodejs.org/api/util.html#utilparseargsconfig">util.parseArgs</a></li>
+        <li>Husky ⮕ <code>hooksPath</code></li>
+        <li>Lerna, Nx, Turbo ⮕ <code>npm monorepo</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <ul>
+        <li>Ditch Babel! Use ESM and supported features</li>
+        <li>
+          JS stages
+          <br/>
+          <small>Stage-0: Nope</small><br/>
+          <small>Stage-1: Nope</small><br/>
+          <small>Stage-2: Nope</small><br/>
+          <small>Stage-3/4: Most probably already available</small>
+        </li>
+      </ul>
+    </section>
+    <!-- stage-3: candidate, vendor implementation -->
+
+
+    <section>
+      <h2>TypeScript?</h2>
+
+      <img src="assets/ts.gif" style="height: 40vh"/>
+
+      <ul>
+        <li>
+          Use plain JS because... reasons <img src="assets/troll.png" style="display: inline; height: 6vh" />
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Even more vanilla</h2>
+      <ul>
+        <li>Cloud infrastructure</li>
+        <li>Shell</li>
+        <li>Editors/IDEs</li>
+        <li>Etc.</li>
+      </ul>
+    </section>
+
+
+
     <section class="cover">
-      <h2>Summing up tooling</h2>
+      <h2>Summing up</h2>
       <div>
         <img src="assets/vanilla-z.png" alt="Some vanilla" />
         <blockquote>
           a hammer nailing a piece of vanilla cake
         </blockquote>
       </div>
+    </section>
+
+    <section>
+      <ul>
+        <li>
+          Not vanilla if dealing with older browsers or node versions or when the UI requires it
+        </li>
+        <li>
+          Evergreen browsers, modern node (or Deno): go vanilla!
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <ul>
+        <li><a href="https://caniuse.com">Can I Use</a></li>
+        <li>Look for green</li>
+        <li>Know your constraints</li>
+        <li>Always verify!</li>
+      </ul>
+    </section>
+
+    <section>
+      <ul>
+        <li>Know your APIs</li>
+        <li>Be up to date: newsletters, feeds, whatever</li>
+      </ul>
+    </section>
+
+    <section>
+      <ul>
+        <li>Progressive enhancement</li>
+        <li>Vanilla stuff to give basic support</li>
+        <li>Then progresively enhace 😃</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Do not fight the browser/environment</h2>
+      <img src="https://media.giphy.com/media/1k5k3J5K3BywQOrpNA/giphy.gif" style="height: 50vh" />
+    </section>
+    <!-- anecdote: Autocomplete API, I'm looking at you. -->
+
+    <section>
+      <ul>
+        <li>Vanilla means Standard (or defacto standards)</li>
+        <li>Standard means developer-portable</li>
+      </ul>
     </section>
 
     <section class="blue">

@@ -165,7 +165,7 @@
       background-color: white;
       font-size: 1vh;
       line-height: 1vh;
-      padding: 0.5vh 0.25vw;
+      padding: 0.5vh 0.25vw 0.2vh;
     }
   </style>
 </head>
@@ -662,7 +662,7 @@
       const totalPages = document.querySelectorAll("section").length;
       const currentPage = Number(location.hash.replace("#slide-","")) + 1;
 
-      document.getElementById("pagination").setHTML(`${currentPage}/${totalPages}`)
+      document.getElementById("pagination").innerHTML = `${currentPage}/${totalPages}`;
     }
 
     updatePagination();

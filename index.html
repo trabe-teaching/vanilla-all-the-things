@@ -55,12 +55,20 @@
       scroll-snap-align: start;
       height: 100vh;
       width: 100vw;
-      padding: 5vh 5vw;
+      padding: 10vh 5vw;
       display: flex;
       flex-flow: column;
+      justify-content: start;
+      align-items: start;
+      text-align: center;
+    }
+
+    section.cover--first,
+    section.meme,
+    section.blue,
+    section.black {
       justify-content: center;
       align-items: center;
-      text-align: center;
     }
 
     section.blue {
@@ -83,6 +91,7 @@
 
     section.cover {
      flex-flow: row;
+     align-items: center
     }
 
     section.cover > * {
@@ -122,21 +131,38 @@
       line-height: 8vh;
     }
 
-    * + * {
-      margin-top: 4vh;
+    h1 + h2 {
+      margin-top: 8vh;
+    }
+
+    h2 + ul {
+      margin-top: 6vh;
     }
 
     ul {
-      list-style-type: none;
+      text-align: left;
+    }
 
+    ul > li + li {
+      margin-top: 3vh;
+    }
+
+    ul ul {
+      margin-top: 3vh;
+      font-size: 70%;
+      line-height: 100%;
+    }
+
+    ul ul > li + li {
+      margin-top: 3vh;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <section style="position: relative">
+    <section class="cover--first" style="position: relative">
       <h1>Trabe</h1>
-      <img src="assets/trabe-logo.png" alt="Trabe logo" style="height: 20vh"/>
+      <img src="assets/trabe-logo.png" alt="Trabe logo" style="height: 40vh; margin: 6vh 0"/>
       <h2>Asís & David</h2>
 
       <div style="position:absolute; bottom: 1vh; right: 1vw; padding: 1vh 1vw; background-color: #f0f0ea; font-size: 2vh; line-height: 2vh">
@@ -145,6 +171,7 @@
     </section>
 
     <section>
+      <h2>Context</h2>
       <ul>
         <li>We develop front and back with JS (15+ years)</li>
 
@@ -164,11 +191,11 @@
       * We're old fellas. Used to that shit and accept solutions that may no longer make sense
     -->
 
-    <section>
+    <section class="meme">
       <h2>
         Let go of the past!
       </h2>
-      <img src="assets/kylo.jpg" alt="Kylo Ren ranting" style="height: 60vh">
+      <img src="assets/kylo.jpg" alt="Kylo Ren ranting" style="height: 60vh; margin: 6vh 0">
     </section>
 
     <section class="blue">
@@ -204,65 +231,85 @@
         <li>Custom calendars ⮕ <code>&lt;input type="date" /&gt;</code></li>
         <li>
           Time input ⮕ <code>&lt;input type="text" &gt;</code>
-          <br/>
-          <small><a href="https://adamsilver.io/blog/designing-a-time-input/">Designing a time input</a></small>
+          <ul>
+            <li>
+              <a href="https://adamsilver.io/blog/designing-a-time-input/">Designing a time input</a>
+            </li>
+          </ul>
         </li>
         <li>
           Form libs ⮕ FormData + string values
-        </li> 
+        </li>
         <li>
           Validation libs ⮕ Browser validation
-          <br/>
-          <small>Formik (44kB) + Yup (60kB)</small>
-          <br/>
-          <small><a href="https://bundlephobia.com">bundlephobia</a></small>
+          <ul>
+            <li>Formik (44kB) + Yup (60kB)</li>
+            <li><a href="https://bundlephobia.com">bundlephobia</a></li>
+          </ul>
         </li>
       </ul>
     </section>
 
     <section>
+      <h2>Modals</h2>
       <ul>
         <li>Custom modals and dialogs ⮕ Browser <code>&ltdialog&gt</code>
           <li>
-            Not just weight. Modality and controlling the focus.
-            <br/>
-            <small>react-modal (25kB), react-focus-lock (15kB)</small>
+            Weigth
+            <ul>
+              <li>react-modal (25kB), react-focus-lock (15kB)</li>
+            </ul>
           </li>
-          <li>Don't fight the browser</li>
+          <li>Not only wieght: modality and controlling the focus</li>
+          <li>Don't fight the browser!</li>
       </ul>
     </section>
 
     <section>
+      <h2>CSS</h2>
       <ul>
         <li>
-          SASS, postCSS, CSS in JS ⮕ Plain CSS with custom properties, calcs and advanced selectors.
-          <br/>
-          <small><code>has</code>, <code>where</code>, <code>is</code></small>
+          SASS, postCSS, CSS in JS ⮕ Plain CSS
+          <ul>
+            <li>
+              custom properties and calcs <code>calc(var(--space-xl) / 2)</code>
+            </li>
+            <li>
+              Advanced selectors: <code>has</code>, <code>where</code>, <code>is</code>
+            </li>
+          </ul>
         </li>
         <li>
           Metodolotions!
-          <br/>
-          <small>
-            <a href="https://getbem.com/introduction">BEM</a>
-            vs.
-            <a href="https://www.keithcirkel.co.uk/css-classes-considered-harmful/">CSS classes considered harmful</a>
-          </small>
+          <ul>
+            <li>
+              <a href="https://getbem.com/introduction">BEM</a>
+              vs.
+              <a href="https://www.keithcirkel.co.uk/css-classes-considered-harmful/">CSS classes considered harmful</a>
+            </li>
+          </ul>
         </li>
         <li>
-          Scoping, CSS-in-JS, CSS modules. Cannot fight the global CSS scope. Runtime problems (style injection, SSR, etc.)
-          <br />
-          <small>Emotion (15kB)</small>
+          Scoping, CSS-in-JS, CSS modules.
+          <ul>
+            <li>Cannot fight the global CSS scope</li>
+            <li>Runtime problems (style injection, SSR, etc.)</li>
+            <li>Weight: Emotion (15kB)</li>
+          </ul>
         </li>
-
       </ul>
     </section>
 
     <section>
+      <h2>i18n</h2>
       <ul>
         <li>
           Luxon, Moment ⮕ Temporal + Intl
-          <br/>
-          <small>Luxon (72kB although can be pruned)</small>
+          <ul>
+            <li>
+              Luxon (72kB although can be pruned)
+            </li>
+          </ul>
         </li>
       </ul>
     </section>
@@ -271,7 +318,12 @@
       <h2>Summarizing</h2>
       <ul>
         <li>
-          The bundling/npm hell (size, security, updates)
+          The bundling/npm hell
+          <ul>
+            <li>weight</li>
+            <li>security</li>
+            <li>updates</li>
+          </ul>
         </li>
         <li>
           Run away from deps
@@ -292,7 +344,12 @@
       <h2>Alternatives</h2>
       <ul>
         <li>Vanilla HTML, CSS and JS</li>
-        <li>Do not use npm: CDNs + import maps</li>
+        <li>Do not use npm
+          <ul>
+            <li>CDNs</li>
+            <li>import maps</li>
+          </ul>
+        </li>
       </ul>
     </section>
 
@@ -307,11 +364,12 @@
     </section>
 
     <section>
+      <h2>Some hints</h2>
       <ul>
         <li><code>useEffect</code> deps ⮕ no deps</li>
         <li><code>useCallback</code>, <code>useMemo</code> ⮕ nay</li>
         <li>Redux, Jotai, etc. ⮕ <code>useState</code>, <code>useReducer</code></li>
-        <li>Anti-vanilla :) Use React events, avoid DOM events</li>
+        <li>Use React events, avoid DOM events (anti-vanilla 😉)</li>
       </ul>
     </section>
 
@@ -334,16 +392,16 @@
     </section>
 
     <section>
-      <h2>Vanilla-inception<br/><small>(vanilla inside vanilla)</small></h2>
+      <h2>Vanilla-inception <small>(vanilla inside vanilla)</small></h2>
       <ul>
         <li>
           SSE instead of Websockets
-          <br/>
-          <small>Zero setup, simpler API, HTTP transport</small>
-        </li>
-        <li>
-          Server push only: keep it simple
-        </li>
+          <ul>
+            <li>Zero setup</li>
+            <li>simpler API</li>
+            <li>HTTP transport</li>
+            <li>Server push only: keep it simple
+          </ul>
       </ul>
     </section>
 
@@ -369,17 +427,31 @@
     <!-- Most libs are about ergonomics -->
 
     <section>
+      <h2>Know your APIs 3</h2>
       <ul>
-        <li>axios, bluebird ⮕ <a href="https://blog.logrocket.com/fetch-api-node-js/">fetch</a></li>
-        <li>Less features but simpler and portable</li>
-        <li>Features arrive (E.g. <code>AbortController</code>). Better later than never!</li>
+        <li>
+          axios, bluebird ⮕ <a href="https://blog.logrocket.com/fetch-api-node-js/">fetch</a>
+          <ul>
+            <li>Less features but simpler and portable</li>
+            <li>Features arrive (E.g. <code>AbortController</code>). Better later than never!</li>
+          </ul>
+        </li>
       </ul>
     </section>
 
     <section>
+      <h2>DSLs</h2>
       <ul>
-        <li>Beware of DSLs to generate standards</li>
-        <li>E.g. <code>joi-to-json-schema</code>: simpler/compact API but not developer-portable</li>
+        <li>
+          Beware of DSLs to generate standards
+        </li>
+        <li>
+          E.g. <code>joi-to-json-schema</code>
+          <ul>
+            <li>simpler/compact API...</li> 
+            <li>...but not developer-portable</li>
+          </ul>
+        </li>
       </ul>
     </section>
 
@@ -395,6 +467,7 @@
 
 
     <section>
+      <h2>Dependency management</h2>
       <ul>
         <li>
           yarn, pnpm ⮕ npm
@@ -406,18 +479,25 @@
     </section>
 
     <section>
+      <h2>One tool to rule them all</h2>
       <ul>
-        <li>Reduce. Simplify. Do not mix</li>
         <li>
-          Webpack + Jest + ESLint + Pretier ⮕  <br/>
-          Vite-Vitest + ESLint + Prettier ⮕ <br/>
-          Vite-Vitest + Rome ⮕ <br/>
-          Rome?
+          Reduce. Simplify. Do not mix
+
+          <div style=" background-color: #f0f0f0; padding: 4vh 2vw; display:flex; flex-flow:column; align-items: center; margin: 5vh auto 0; width: 70vw;">
+            <span>Webpack + Jest + ESLint + Pretier</span>
+            <span>⬇</span>
+            <span>Vite + Vitest + ESLint + Prettier</span>
+            <span>⬇</span>
+            <span>Vite + Vitest + Rome</span>
+            <span>⬇</span>
+            <span>Rome?
         </li>
       </ul>
     </section>
 
     <section>
+      <h2>Alternative tooling</h2>
       <ul>
         <li>For simple features use standard solutions</li>
         <li>Jest ⮕ <a href="https://nodejs.org/api/test.html">node test runner</a></li>
@@ -428,31 +508,31 @@
     </section>
 
     <section>
+      <h2>Transpilation</h2>
       <ul>
         <li>Ditch Babel! Use ESM and supported features</li>
         <li>
           JS stages
-          <br/>
-          <small>Stage-0: Nope</small><br/>
-          <small>Stage-1: Nope</small><br/>
-          <small>Stage-2: Nope</small><br/>
-          <small>Stage-3/4: Most probably already available</small>
+          <ul>
+          <li>Stage-0: Nope</small></li>
+          <li>Stage-1: Nope</small></li>
+          <li>Stage-2: Nope</small></li>
+          <li>Stage-3/4: Most probably already available</li>
+          </ul>
         </li>
       </ul>
     </section>
     <!-- stage-3: candidate, vendor implementation -->
 
 
-    <section>
+    <section class="meme">
       <h2>TypeScript?</h2>
 
-      <img src="assets/ts.gif" style="height: 40vh"/>
+      <img src="assets/ts.gif" style="height: 40vh; margin: 6vh 0"/>
 
-      <ul>
-        <li>
-          Use plain JS because... reasons <img src="assets/troll.png" style="display: inline; height: 6vh" />
-        </li>
-      </ul>
+      <h3>
+        Use plain JS because... reasons <img src="assets/troll.png" style="display: inline; height: 6vh" />
+      </h3>
     </section>
 
     <section>
@@ -478,6 +558,7 @@
     </section>
 
     <section>
+      <h2>When to vanilla</h2>
       <ul>
         <li>
           No vanilla if dealing with older browsers or node versions, or when the UI requires it
@@ -489,6 +570,7 @@
     </section>
 
     <section>
+      <h2>Is vanilla possible?</h2>
       <ul>
         <li><a href="https://caniuse.com">Can I Use</a></li>
         <li>Look for green</li>
@@ -498,6 +580,7 @@
     </section>
 
     <section>
+      <h2>Keep up to the changes</h2>
       <ul>
         <li>Know your APIs</li>
         <li>Be up to date: newsletters, feeds, whatever</li>
@@ -505,22 +588,23 @@
     </section>
 
     <section>
+      <h2>Progressive enhancement</h2>
       <ul>
-        <li>Progressive enhancement</li>
         <li>Vanilla stuff to give basic support</li>
         <li>Then progresively enhace 😃</li>
       </ul>
     </section>
 
-    <section>
+    <section class="meme">
       <h2>Do not fight the browser/environment</h2>
-      <img src="https://media.giphy.com/media/1k5k3J5K3BywQOrpNA/giphy.gif" style="height: 50vh" />
+      <img src="https://media.giphy.com/media/1k5k3J5K3BywQOrpNA/giphy.gif" style="height: 50vh; margin: 6vh 0" />
     </section>
     <!-- anecdote: Autocomplete API, I'm looking at you. -->
 
     <section>
+      <h2>Be developer-friendly</h2>
       <ul>
-      <li>Vanilla means Standard (or <em>de facto</em> standards)</li>
+        <li>Vanilla means Standard (or <em>de facto</em> standards)</li>
         <li>Standard means developer-portable</li>
       </ul>
     </section>
